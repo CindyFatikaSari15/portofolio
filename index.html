@@ -5,112 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Akademik | Cindy Fatika Sari</title>
     <style>
-        /* CSS Dasar */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: #f0f2f5; color: #333; line-height: 1.6; }
-        
-        /* Navigasi */
-        nav { background: #1a2a6c; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
-        nav a:hover { color: #fdbb2d; }
-
-        /* Header dengan FOTO */
-        header { height: 55vh; background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 60px; }
-        
-        /* Gaya Foto Profil */
-        .profile-pic {
-            width: 150px; /* Ukuran lebar foto */
-            height: 150px; /* Ukuran tinggi foto */
-            border-radius: 50%; /* Membuat jadi lingkaran */
-            border: 5px solid white; /* Bingkai putih */
-            object-fit: cover; /* Agar foto tidak gepeng */
-            margin-bottom: 20px; /* Jarak ke nama */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bayangan agar estetik */
+        /* --- CSS Global & Warna (Ungu-Biru Gradient) --- */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Ungu ke Biru */
+            --secondary-color: #f4f7f6;
+            --text-dark: #2d3436;
+            --text-light: #ffffff;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--secondary-color); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
 
-        /* Kontainer Utama */
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 20px; }
-        section { padding: 3rem 0; }
-        h2 { color: #1a2a6c; margin-bottom: 2rem; border-bottom: 3px solid #fdbb2d; display: inline-block; }
+        /* --- Navigasi --- */
+        nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.2rem; font-weight: 700; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: #764ba2; }
 
-        /* Grid System */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        /* --- Header Profil (Gradient Section) --- */
+        header { height: 80vh; background: var(--primary-gradient); color: var(--text-light); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 80px; position: relative; }
         
-        /* Card Style */
-        .card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #1a2a6c; transition: 0.3s; }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .card.kuis { border-top-color: #fdbb2d; }
-        .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: #333; }
-        .card p { font-size: 0.9rem; color: #666; }
+        /* Bagian Foto Profil */
+        .profile-pic-container { width: 180px; height: 180px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.3); box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 25px; transition: 0.3s; background-color: rgba(255,255,255,0.1); /* Background jika foto belum ada */ display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+        .profile-pic-container:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.5); }
+        .profile-pic-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Tentang Saya */
-        .about { background: white; padding: 2rem; border-radius: 12px; }
-
-        footer { text-align: center; padding: 2rem; background: #1a2a6c; color: white; margin-top: 2rem; }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#Profil">Profil</a>
-        <a href="#Tugas & Kuis">Tugas</a>
-        <a href="#Tentang">Tentang Saya</a>
-    </nav>
-
-    <header id="profil">
-        <img src="foto-cindy.jpg" alt="Foto Cindy Fatika Sari" class="profile-pic">
-        
-        <h1>Cindy Fatika Sari</h1>
-        <p>Mahasiswa IT | Universitas Lampung | NPM: 2513025065</p>
-    </header>
-
-    <div class="container">
-        
-        <section id="tugas">
-            <h2>Daftar Tugas</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Tugas 01</h3>
-                    <p>Pengertian, Sejarah, dan Tokoh Perintis Grafika Komputer</p>
-                </div>
-                <div class="card">
-                    <h3>Tugas 02</h3>
-                    <p>Sistem grafika Komputer</p>
-                </div>
-                <div class="card">
-                    <h3>Tugas 03</h3>
-                    <p>Algoritma Pembentukan Garis</p>
-                </div>
-                <div class="card">
-                    <h3>Tugas 04</h3>
-                    <p>Algoritma Pembentukan Lingkaran</p>
-                </div>
-                <div class="card">
-                    <h3>Tugas 05</h3>
-                    <p>Algoritma Pembentukan Kurva</p>
-                </div>
-                <div class="card">
-                    <h3>Kuis 01</h3>
-                    <p>Persamaan Misteri</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="tentang">
-            <div class="about">
-                <h2>Tentang Saya</h2>
-                <p>Halo! Saya Cindy, mahasiswa Pendidikan Teknologi Informasi di Universitas Lampung. Portofolio ini dibuat untuk mendokumentasikan perjalanan belajar saya selama di bangku kuliah.</p>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 - Cindy Fatika Sari | PTI Unila</p>
-    </footer>
-
-</body>
-</html>
+        header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
+        header p { font-size: 1.2rem; font-weight: 300; opacity: 0.9; margin-bottom
