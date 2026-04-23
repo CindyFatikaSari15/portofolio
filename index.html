@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Akademik | Cindy Fatika Sari</title>
+    <style>
+        /* --- CSS Global --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+
+        /* --- Navigasi TENGAH --- */
+        nav { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 1.2rem; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            display: flex; 
+            justify-content: center; /* Membuat menu ke tengah */
+            align-items: center; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 2.5rem; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            color: #333; 
+            transition: 0.3s; 
+        }
+        .nav-links a:hover { color: #6a11cb; }
+
+        /* --- Header UNGU & BIRU --- */
+        /* Ganti kode header lama dengan kode ini */
+header { 
+    height: 70vh; 
+    /* Perpaduan Ungu ke Biru Cerah (Linear Gradient) */
+    background: #6a11cb;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    padding-top: 80px; 
+    position: relative; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+        
+        /* Foto Profil */
+        .profile-pic-container { 
+            width: 170px; 
+            height: 170px; 
+            border-radius: 50%; 
+            border: 6px solid rgba(255,255,255,0.3); 
+            overflow: hidden; 
+            margin-bottom: 25px; 
+            background-color: white;
+        }
+        .profile-pic-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 5px; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* --- Kontainer Utama --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; }
+        h2.section-title { 
+            color: #2575fc; 
+            margin-bottom: 2.5rem; 
+            border-bottom: 4px solid #6a11cb; 
+            display: inline-block; 
+            padding-bottom: 5px;
+        }
+
+        /* --- Grid Tugas & Kuis Menjadi Satu --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            border-top: 6px solid #6a11cb; 
+            transition: 0.3s; 
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(106, 17, 203, 0.1); }
+        .card h3 { margin-bottom: 10px; color: #182848; font-size: 1.2rem; }
+        .card p { font-size: 0.9rem; color: #666; }
+
+        /* Gaya Khusus untuk Kuis agar ada sedikit perbedaan */
+        .card.kuis-card { border-top-color: #2575fc; }
+        .btn-tugas {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white !important;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-tugas:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        }
+
+        footer { text-align: center; padding: 3rem; background: #182848; color: white; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#profil">Profil</a>
+            <a href="#tugas-section">Tugas & Kuis</a>
+            <a href="#tentang">Tentang Saya</a>
+        </div>
+    </nav>
+
+    <header id="profil">
+        <div class="profile-pic-container">
+            <img src="profil.jpg" alt="Foto Cindy Fatika Sari">
+        </div>
+        <h1>Cindy Fatika Sari</h1>
+        <p>Mahasiswa Pendidikan Teknologi Informasi | Universitas Lampung | NPM: 2513025065</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="tugas-section">
+            <h2 class="section-title">Daftar Tugas & Kuis</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3>Tugas 01</h3>
+                    <p>Pengertian, Sejarah, dan Tokoh Perintis Grafika Komputer.</p>
+                    <a href="https://forms.gle/qAgubN74jN8P5LpC9" target="_blank" class="btn-tugas">Lihat Tugas →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Tugas 02</h3>
+                    <p>Sistem Grafika Komputer.</p>
+                    <a href="https://forms.gle/rdK6T6iD5x1pzwhN9" target="_blank" class="btn-tugas">Lihat Tugas →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Tugas 03</h3>
+                    <p>Algoritma Pembentukan Garis (DDA & Bresenham).</p>
+                    <a href="https://forms.gle/JpEnna1A9UEAdFC8A" target="_blank" class="btn-tugas">Lihat Tugas →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Tugas 04</h3>
+                    <p>Algoritma Pembentukan Lingkaran.</p>
+                    <a href="https://forms.gle/pu9BvJicaCaRtYyc7" target="_blank" class="btn-tugas">Lihat Tugas →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Tugas 05</h3>
+                    <p>Algoritma Pembentukan Kurva Bezier.</p>
+                    <a href="https://forms.gle/EvE6xdPzUPsYBnr87" target="_blank" class="btn-tugas">Lihat Tugas →</a>
+                </div>
+
+                <div class="card kuis-card">
+                    <h3>Kuis 01</h3>
+                    <p>Persamaan Misteri.</p>
+                    <a href="https://youtu.be/ZF9oX92_2z0?si=ZCS9IuykKbMavYI-" target="_blank" class="btn-tugas">Lihat Kuis →</a>
+                </div>
+
+                <div class="card kuis-card">
+                    <h3>Kuis 02</h3>
+                    <p>Transformasi 2D.</p>
+                    <a href="https://youtu.be/ZF9oX92_2z0?si=ZCS9IuykKbMavYI-" target="_blank" class="btn-tugas">Lihat Kuis →</a>
+                </div>
+
+                <div class="card kuis-card">
+                    <h3>Kuis 03</h3>
+                    <p>Algoritma Pemotongan Garis.</p>
+                    <a href="https://youtu.be/ZF9oX92_2z0?si=ZCS9IuykKbMavYI-" target="_blank" class="btn-tugas">Lihat Kuis →</a>
+                </div>
+
+                <div class="card kuis-card">
+                    <h3>Kuis 04</h3>
+                    <p>Algoritma Pemotongan Poligon.</p>
+                    <a href="https://youtu.be/ZF9oX92_2z0?si=ZCS9IuykKbMavYI-" target="_blank" class="btn-tugas">Lihat Kuis →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tentang">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div style="background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <p>Halo! Saya Cindy Fatika Sari, mahasiswa Pendidikan Teknologi Informasi di Universitas Lampung. Saat ini saya sedang menempuh pendidikan di bidang keguruan berbasis teknologi, yang menggabungkan ilmu pendidikan dengan pemanfaatan teknologi informasi. Selama perkuliahan, saya terus belajar untuk mengembangkan kemampuan akademik, komunikasi, serta kerja sama dalam berbagai kegiatan. Saya berharap dapat menjadi pendidik yang mampu memanfaatkan teknologi secara efektif di dunia pendidikan. Portofolio ini merangkum perjalanan akademik saya, khususnya pada mata kuliah Grafika Komputer.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Cindy Fatika Sari | PTI Unila</p>
+    </footer>
+
+</body>
+</html>
